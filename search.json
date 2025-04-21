@@ -1,1 +1,1 @@
-[{"title":"YAJUSP","url":"/2025/04/20/hello-world/","content":"114514\n"}]
+[{"title":"home","url":"/2025/04/21/home/","content":"   \n #include &lt;iostream&gt;using namespace std;int main()&#123;    cout&lt;&lt;&quot;Hello World&quot;;    return 0;&#125; "}]
