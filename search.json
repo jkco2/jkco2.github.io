@@ -1,1 +1,1 @@
-[{"title":"home","url":"/2025/04/21/home/","content":"\n\n \n \n \n \n #include &lt;iostream&gt;using namespace std;int main()&#123;    cout&lt;&lt;&quot;Hello World&quot;;    return 0;&#125;"}]
+[{"title":"首页","url":"/2025/04/21/home/","content":"\n\n \n \n \n \n #include &lt;iostream&gt;using namespace std;int main()&#123;    cout&lt;&lt;&quot;Hello World&quot;;    return 0;&#125;"}]
