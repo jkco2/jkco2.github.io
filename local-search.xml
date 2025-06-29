@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>machine_learning</title>
+    <link href="/2025/06/05/machine-learning/"/>
+    <url>/2025/06/05/machine-learning/</url>
+    
+    <content type="html"><![CDATA[<h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><p>假设用P来评估计算机程序在某人物类T上的性能，若一个程序通过利用经验E在T中任务上获得了性能改善，则我们就说关于T和P,该程序对E进行了学习。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>首页</title>
+    <link href="/2025/04/21/home/"/>
+    <url>/2025/04/21/home/</url>
+    
+    <content type="html"><![CDATA[<img src="/2025/04/21/home/ill.jpg" width="10%" alt=Loading align="center"><blockquote><p>无中生有是最基本的，规则是用来打破的</p></blockquote> <video width="640" height="360" controls> <source src = /2025/04/21/home/hand.mp4> </video>  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cout&lt;&lt;<span class="hljs-string">&quot;Hello World&quot;</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
