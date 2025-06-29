@@ -193,12 +193,23 @@
   
   
   
-  <div class="post-block">
-    <div class="posts-collapse">
+  <div class="post-block archive-list-mode" id="archive-container">
+    <div class="archive-mode-switch">
       <div class="collection-title">
         <span class="collection-header">嗯..! 目前共计 2 篇日志。 继续努力。</span>
       </div>
+      
+      <div class="archive-view-toggle">
+        <button class="view-toggle-btn active" data-mode="list">
+          <i class="fa fa-list"></i> 列表视图
+        </button>
+        <button class="view-toggle-btn" data-mode="grid">
+          <i class="fa fa-th-large"></i> 矩阵视图
+        </button>
+      </div>
+    </div>
 
+    <div class="posts-collapse">
       
     <div class="collection-year">
       <span class="collection-header">2025</span>
@@ -224,6 +235,41 @@
     </header>
   </article>
 
+    </div>
+    
+    <div class="posts-grid" style="display: none;">
+      
+<div class="posts-grid">
+    <article class="post-grid-item" itemscope itemtype="http://schema.org/Article">
+      <div class="post-grid-header">
+        <h3 class="post-grid-title">
+            <a class="post-title-link" href="/2025/06/05/machine-learning/" itemprop="url">
+              <span itemprop="name">machine_learning</span>
+            </a>
+        </h3>
+        
+        <div class="post-grid-meta">
+          <time itemprop="dateCreated"
+                datetime="2025-06-05T20:06:41+08:00"
+                content="2025-06-05">
+            <i class="fa fa-calendar"></i>
+            2025-06-05
+          </time>
+        </div>
+      </div>
+      
+      <div class="post-grid-excerpt">
+          <h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><p>假设用P来评估计算机程序在某人物类T上的性能，若一个程序通过利用经验E在T中任务上获得了性能改善，则我们就说关于T和P,该程序对E进行了学习。</p>
+        
+      </div>
+      
+      <div class="post-grid-footer">
+        <a href="/2025/06/05/machine-learning/" class="post-grid-read-more">
+          阅读全文 <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+    </article>
+</div>
 
     </div>
   </div>
