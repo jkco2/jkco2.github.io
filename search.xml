@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>machine_learning</title>
-    <url>/2025/06/05/machine-learning/</url>
-    <content><![CDATA[<h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><p>假设用P来评估计算机程序在某人物类T上的性能，若一个程序通过利用经验E在T中任务上获得了性能改善，则我们就说关于T和P,该程序对E进行了学习。</p>
-<span id="more"></span>
-<p>ddd</p>
-]]></content>
-  </entry>
-  <entry>
     <title>首页</title>
     <url>/2025/04/21/home/</url>
     <content><![CDATA[<img src="/2025/04/21/home/ill.jpg" width="10%" alt=Loading align="center">
@@ -19,6 +11,14 @@
  </video>
  
  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    cout&lt;&lt;&quot;Hello World&quot;;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>machine_learning</title>
+    <url>/2025/06/05/machine-learning/</url>
+    <content><![CDATA[<h1 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h1><p>假设用P来评估计算机程序在某人物类T上的性能，若一个程序通过利用经验E在T中任务上获得了性能改善，则我们就说关于T和P,该程序对E进行了学习。</p>
+<span id="more"></span>
+<p>ddd</p>
 ]]></content>
   </entry>
 </search>
