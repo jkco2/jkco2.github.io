@@ -1290,7 +1290,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9ee3e8;
+  background: #77e8ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3187,40 +3187,29 @@ pre code {
 .post-grid-item .post-grid-meta a:hover {
   color: #1890ff;
 }
-.post-grid-item .image-gallery {
-  max-width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  background: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border: none;
-  box-shadow: none;
+.post-grid-item .post-grid-image {
+  margin: 15px -20px;
+  overflow: hidden;
+  height: 200px;
+  position: relative;
 }
-.post-grid-item .gallery-row {
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 5px;
+.post-grid-item .post-grid-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1));
 }
-.post-grid-item .gallery-img {
-  max-width: 100% !important;
-  width: 100% !important;
-  flex: 0 0 100% !important;
-  height: 150px !important;
-  object-fit: cover !important;
-  border-radius: 8px;
+.post-grid-item .post-grid-image .preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
-.post-grid-item .gallery-row:has(.gallery-img:nth-child(2)):not(:has(.gallery-img:nth-child(3))) .gallery-img {
-  flex: 0 0 calc(50% - 2.5px) !important;
-  max-width: calc(50% - 2.5px) !important;
-  width: calc(50% - 2.5px) !important;
-  height: 120px !important;
-}
-.post-grid-item .gallery-row:has(.gallery-img:nth-child(3)) .gallery-img {
-  flex: 0 0 calc(33.33% - 3.33px) !important;
-  max-width: calc(33.33% - 3.33px) !important;
-  width: calc(33.33% - 3.33px) !important;
-  height: 100px !important;
+.post-grid-item .post-grid-image:hover .preview-img {
+  transform: scale(1.05);
 }
 .post-grid-item .post-grid-excerpt {
   color: #333;
@@ -3243,12 +3232,8 @@ pre code {
   .posts-grid {
     grid-template-columns: 1fr;
   }
-  .post-grid-item .gallery-img {
-    height: 120px !important;
-  }
-  .post-grid-item .gallery-row:has(.gallery-img:nth-child(2)):not(:has(.gallery-img:nth-child(3))) .gallery-img,
-  .post-grid-item .gallery-row:has(.gallery-img:nth-child(3)) .gallery-img {
-    height: 100px !important;
+  .post-grid-item .post-grid-image {
+    height: 160px;
   }
 }
 @-moz-keyframes fadeIn {
