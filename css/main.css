@@ -1290,7 +1290,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #38ffb0;
+  background: #341a9d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3215,42 +3215,52 @@ pre code {
   height: 140px !important;
   overflow: hidden !important;
   border-radius: 10px !important;
+  position: relative !important;
 }
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw > * {
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw {
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 2 !important;
+}
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw img {
+  display: block !important;
+  width: 100% !important;
+  height: 140px !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  transition: transform 0.3s ease !important;
+}
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw img:hover {
+  transform: scale(1.02) !important;
+}
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw img:not(:first-of-type) {
   display: none !important;
 }
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw .image-gallery:first-child {
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw > *:not(img) {
+  display: none !important;
+}
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw p img,
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw div img,
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw span img {
   display: block !important;
 }
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw .image-gallery:first-child .gallery-row:first-child {
-  display: flex !important;
-  justify-content: center !important;
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw p:not(:empty),
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw div:not(:empty),
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw span:not(:empty) {
+  font-size: 0 !important;
+  line-height: 0 !important;
 }
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw .image-gallery:first-child .gallery-row:first-child .gallery-img:first-child {
-  display: block !important;
-  width: 100% !important;
-  height: 140px !important;
-  object-fit: cover !important;
-  border-radius: 10px !important;
-  cursor: pointer !important;
-  transition: transform 0.3s ease !important;
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw p:not(:empty) img,
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw div:not(:empty) img,
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw span:not(:empty) img {
+  font-size: initial !important;
+  line-height: initial !important;
 }
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw .image-gallery:first-child .gallery-row:first-child .gallery-img:first-child:hover {
-  transform: scale(1.02) !important;
-}
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw img:first-child {
-  display: block !important;
-  width: 100% !important;
-  height: 140px !important;
-  object-fit: cover !important;
-  border-radius: 10px !important;
-  cursor: pointer !important;
-  transition: transform 0.3s ease !important;
-}
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw img:first-child:hover {
-  transform: scale(1.02) !important;
-}
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw p:first-child img:first-child {
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw .image-gallery .gallery-row .gallery-img {
   display: block !important;
   width: 100% !important;
   height: 140px !important;
@@ -3259,35 +3269,17 @@ pre code {
   cursor: pointer !important;
   transition: transform 0.3s ease !important;
 }
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw p:first-child img:first-child:hover {
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw .image-gallery .gallery-row .gallery-img:hover {
   transform: scale(1.02) !important;
 }
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw img:not(.image-gallery img):first-of-type {
-  display: block !important;
-  width: 100% !important;
-  height: 140px !important;
-  object-fit: cover !important;
-  border-radius: 10px !important;
-  cursor: pointer !important;
-  transition: transform 0.3s ease !important;
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw .image-gallery .gallery-row .gallery-img:not(:first-child) {
+  display: none !important;
 }
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw img:not(.image-gallery img):first-of-type:hover {
-  transform: scale(1.02) !important;
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw .image-gallery .gallery-row:not(:first-child) {
+  display: none !important;
 }
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw *:has(img:first-child) {
-  display: block !important;
-}
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw:has(img:only-child) img {
-  display: block !important;
-  width: 100% !important;
-  height: 140px !important;
-  object-fit: cover !important;
-  border-radius: 10px !important;
-  cursor: pointer !important;
-  transition: transform 0.3s ease !important;
-}
-.post-grid-item .post-grid-content .post-grid-images .post-content-raw:has(img:only-child) img:hover {
-  transform: scale(1.02) !important;
+.post-grid-item .post-grid-content .post-grid-images .post-content-raw .image-gallery:not(:first-child) {
+  display: none !important;
 }
 .post-grid-item .post-grid-content .post-grid-images .post-default-cover {
   width: 100% !important;
@@ -3299,8 +3291,10 @@ pre code {
   justify-content: center !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
-  position: relative !important;
-  overflow: hidden !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
 }
 .post-grid-item .post-grid-content .post-grid-images .post-default-cover::before {
   content: '' !important;
