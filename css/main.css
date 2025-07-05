@@ -1290,7 +1290,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #963449;
+  background: #ace07d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2909,15 +2909,19 @@ li {
 }
 .gallery-row {
   display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 10px;
+  margin-bottom: 10px;
   justify-content: center;
-  align-items: flex-start;
+}
+.gallery-row:has(.gallery-img:nth-child(3)) .gallery-img {
+  flex: 1;
+  max-width: 32%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 .gallery-img {
-  flex: none;
-  width: 280px;
-  max-width: calc(33.333% - 10px);
   height: auto;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -2926,6 +2930,27 @@ li {
 .gallery-img:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.gallery-row:has(.gallery-img:only-child) .gallery-img,
+.gallery-row .gallery-img:only-child {
+  flex: none;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.gallery-row:has(.gallery-img:nth-child(2)):not(:has(.gallery-img:nth-child(3))) .gallery-img {
+  flex: 0 0 48% !important;
+  max-width: 48% !important;
+  margin: 0;
+}
+.gallery-row:last-child .gallery-img:only-child {
+  flex: none;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.gallery-row:last-child:not(:has(.gallery-img:nth-child(3))) .gallery-img {
+  flex: 0 0 48% !important;
+  max-width: 48% !important;
+  margin: 0;
 }
 #imageModal.modal {
   display: none !important;
@@ -3111,6 +3136,120 @@ pre code {
 }
 .footer .with-love {
   display: none !important;
+}
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+.post-grid-item {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+.post-grid-item:hover {
+  transform: translateY(-5px);
+}
+.post-grid-item .post-grid-header {
+  margin-bottom: 15px;
+}
+.post-grid-item .post-grid-title {
+  font-size: 1.2em;
+  margin: 0 0 10px 0;
+}
+.post-grid-item .post-grid-title a {
+  color: #000;
+  text-decoration: none;
+}
+.post-grid-item .post-grid-title a:hover {
+  color: #1890ff;
+}
+.post-grid-item .post-grid-meta {
+  font-size: 0.9em;
+  color: #666;
+}
+.post-grid-item .post-grid-meta > * {
+  margin-right: 15px;
+}
+.post-grid-item .post-grid-meta i {
+  margin-right: 5px;
+}
+.post-grid-item .post-grid-meta a {
+  color: #666;
+  text-decoration: none;
+}
+.post-grid-item .post-grid-meta a:hover {
+  color: #1890ff;
+}
+.post-grid-item .post-grid-content {
+  color: #333;
+  margin: 15px 0;
+  line-height: 1.6;
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.post-grid-item .post-grid-content .image-gallery {
+  max-height: 200px;
+  overflow: hidden;
+  margin: 10px 0;
+  padding: 10px;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 8px;
+}
+.post-grid-item .post-grid-content .gallery-row {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0;
+}
+.post-grid-item .post-grid-content .gallery-row .gallery-img:first-child {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  flex: none;
+  max-width: 100%;
+}
+.post-grid-item .post-grid-content .gallery-row .gallery-img:not(:first-child) {
+  display: none;
+}
+.post-grid-item .post-grid-content .gallery-row:not(:first-child) {
+  display: none;
+}
+.post-grid-item .post-grid-content .image-gallery ~ * {
+  display: none;
+}
+.post-grid-item .post-grid-footer {
+  margin-top: 15px;
+  text-align: right;
+}
+.post-grid-item .post-grid-footer .post-grid-read-more {
+  color: #1890ff;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.post-grid-item .post-grid-footer .post-grid-read-more:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+  .post-grid-item .post-grid-content .gallery-row .gallery-img:first-child {
+    height: 140px;
+  }
 }
 @-moz-keyframes fadeIn {
   from {
