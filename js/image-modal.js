@@ -1,5 +1,14 @@
-// 全局图片模态窗口功能
+/**
+ * 全局图片模态窗口功能
+ * 为所有带有 gallery-img 类的图片添加点击放大功能
+ */
+
 document.addEventListener('DOMContentLoaded', function() {
+  // 检查是否已经创建过模态窗口
+  if (document.getElementById('imageModal')) {
+    return;
+  }
+  
   // 创建模态窗口元素并添加到body
   var modal = document.createElement('div');
   modal.id = 'imageModal';
@@ -21,25 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
   var closeBtn = modal.querySelector('.close');
   
   // 初始化图片点击事件
-  function initializeImageModal() {
-    // 获取所有可点击的图片（包括gallery-img和post-body中的图片）
-    var images = document.querySelectorAll('.gallery-img, .post-body img, .post-content img, article img');
+  function initImageClickEvents() {
+    var images = document.querySelectorAll('.gallery-img');
     
-    // 为每个图片添加点击事件
     images.forEach(function(img) {
-      // 避免重复添加事件监听器
-      if (!img.hasAttribute('data-modal-initialized')) {
-        img.setAttribute('data-modal-initialized', 'true');
+      // 避免重复绑定事件
+      if (!img.hasAttribute('data-modal-bound')) {
+        img.setAttribute('data-modal-bound', 'true');
         img.style.cursor = 'pointer';
         
-        img.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          
+        img.addEventListener('click', function() {
           // 显示模态窗口
           modal.style.display = 'block';
           modalImg.src = this.src;
-          modalCaption.textContent = this.alt || this.title || '图片';
+          modalCaption.textContent = this.alt || '图片';
           
           // 禁止背景滚动
           document.body.style.overflow = 'hidden';
@@ -59,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
   closeBtn.addEventListener('click', closeModal);
   
   // 点击模态窗口外部关闭
-  modal.addEventListener('click', function(event) {
+  window.addEventListener('click', function(event) {
     if (event.target === modal) {
       closeModal();
     }
@@ -72,27 +76,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // 初始化
-  initializeImageModal();
+  // 初始化当前页面的图片
+  initImageClickEvents();
   
-  // 监听DOM变化，处理动态加载的图片
+  // 监听DOM变化，为动态添加的图片绑定事件（适用于PJAX等异步加载）
   var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
       if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-        // 检查是否有新的图片被添加
-        var hasNewImages = false;
-        mutation.addedNodes.forEach(function(node) {
-          if (node.nodeType === 1) { // 元素节点
-            if (node.tagName === 'IMG' || node.querySelector('img')) {
-              hasNewImages = true;
-            }
-          }
-        });
-        
-        if (hasNewImages) {
-          // 重新初始化图片模态窗口
-          setTimeout(initializeImageModal, 100);
-        }
+        // 延迟执行，确保DOM完全加载
+        setTimeout(initImageClickEvents, 100);
       }
     });
   });
@@ -102,4 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
     childList: true,
     subtree: true
   });
+  
+  // 兼容PJAX
+  if (typeof window.addEventListener !== 'undefined') {
+    window.addEventListener('pjax:complete', initImageClickEvents);
+    window.addEventListener('pjax:success', initImageClickEvents);
+  }
 }); 

@@ -1290,7 +1290,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff460d;
+  background: #be06ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2894,43 +2894,6 @@ li {
   padding: 20px;
   margin-bottom: 20px;
   border: 1px solid rgba(255,255,255,0.1);
-}
-.post-body img,
-.post-content img,
-article img {
-  cursor: pointer !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease !important;
-  border-radius: 8px !important;
-  max-width: 100% !important;
-  height: auto !important;
-}
-.post-body img:hover,
-.post-content img:hover,
-article img:hover {
-  transform: scale(1.02) !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2) !important;
-  filter: brightness(1.1) !important;
-}
-.post-body img::after,
-.post-content img::after,
-article img::after {
-  content: '🔍';
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0,0,0,0.7);
-  color: #fff;
-  padding: 5px 8px;
-  border-radius: 50%;
-  font-size: 12px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-.post-body img:hover::after,
-.post-content img:hover::after,
-article img:hover::after {
-  opacity: 1;
 }
 .image-gallery {
   width: 100%;
