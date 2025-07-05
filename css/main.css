@@ -991,7 +991,7 @@ pre .javascript .function {
 }
 .site-meta {
   flex-grow: 1;
-  text-align: center;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .site-meta {
@@ -1290,7 +1290,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #919fff;
+  background: #963449;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2740,7 +2740,7 @@ hr {
 }
 .posts-expand.index .post-title,
 .posts-expand.index .post-meta {
-  text-align: center;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .posts-expand.index .post-title,
@@ -2909,13 +2909,15 @@ li {
 }
 .gallery-row {
   display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 15px;
+  margin-bottom: 15px;
   justify-content: center;
+  align-items: flex-start;
 }
 .gallery-img {
-  flex: 1;
-  max-width: 32%;
+  flex: none;
+  width: 280px;
+  max-width: calc(33.333% - 10px);
   height: auto;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
