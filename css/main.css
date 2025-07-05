@@ -1290,7 +1290,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff1cfb;
+  background: #d2ad32;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3154,6 +3154,7 @@ pre code {
   transition: all 0.3s ease !important;
   overflow: hidden !important;
   display: flex !important;
+  flex-direction: row !important;
 }
 .posts-grid .post-grid-item:hover {
   transform: translateY(-2px) !important;
@@ -3161,85 +3162,137 @@ pre code {
 }
 .posts-grid .post-grid-item .post-grid-cover {
   width: 280px !important;
+  min-width: 280px !important;
+  max-width: 280px !important;
   flex-shrink: 0 !important;
 }
 .posts-grid .post-grid-item .post-grid-cover .post-grid-images {
   width: 100% !important;
   height: 100% !important;
   position: relative !important;
+  overflow: hidden !important;
+  background: #f5f5f5 !important;
 }
 .posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw > * {
+  display: none !important;
+}
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery {
+  display: block !important;
+}
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw p {
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw > img {
+  display: block !important;
+}
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery {
   width: 100% !important;
   height: 100% !important;
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
-  z-index: 2 !important;
-}
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  cursor: pointer !important;
-  transition: transform 0.3s ease !important;
-}
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw img:hover {
-  transform: scale(1.02) !important;
-}
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw img:not(:first-of-type) {
-  display: none !important;
-}
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw > *:not(img) {
-  display: none !important;
-}
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw p,
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw div,
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw span {
-  height: 100% !important;
-}
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw p img,
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw div img,
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw span img {
-  display: block !important;
-}
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw p:not(:empty),
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw div:not(:empty),
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw span:not(:empty) {
-  font-size: 0 !important;
-  line-height: 0 !important;
-}
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw p:not(:empty) img,
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw div:not(:empty) img,
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw span:not(:empty) img {
-  font-size: initial !important;
-  line-height: initial !important;
-}
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery {
-  height: 100% !important;
+  z-index: 5 !important;
 }
 .posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery .gallery-row {
-  height: 100% !important;
+  display: none !important;
 }
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery .gallery-row .gallery-img {
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery .gallery-row:first-child {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery .gallery-row:first-child .gallery-img {
+  display: none !important;
+}
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery .gallery-row:first-child .gallery-img:first-child {
+  display: block !important;
+  width: 110% !important;
+  height: 110% !important;
   object-fit: cover !important;
-  cursor: pointer !important;
-  transition: transform 0.3s ease !important;
+  object-position: center !important;
+  position: absolute !important;
+  top: -5% !important;
+  left: -5% !important;
+  z-index: 5 !important;
+  border: none !important;
+  outline: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: scale(1.05) !important;
 }
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery .gallery-row .gallery-img:hover {
-  transform: scale(1.02) !important;
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw p img {
+  display: block !important;
+  width: 110% !important;
+  height: 110% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  position: absolute !important;
+  top: -5% !important;
+  left: -5% !important;
+  z-index: 4 !important;
+  border: none !important;
+  outline: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: scale(1.05) !important;
 }
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery .gallery-row .gallery-img:not(:first-child) {
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw > img:not(.gallery-img) {
+  display: block !important;
+  width: 110% !important;
+  height: 110% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  position: absolute !important;
+  top: -5% !important;
+  left: -5% !important;
+  z-index: 4 !important;
+  border: none !important;
+  outline: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: scale(1.05) !important;
+}
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw img:not(.gallery-img):nth-of-type(n+2) {
   display: none !important;
 }
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery .gallery-row:not(:first-child) {
-  display: none !important;
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw img {
+  max-width: none !important;
+  max-height: none !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  transform: scale(1) !important;
+  image-rendering: auto !important;
+  -webkit-transform: scale(1) !important;
+  -moz-transform: scale(1) !important;
+  -ms-transform: scale(1) !important;
+  -o-transform: scale(1) !important;
 }
-.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw .image-gallery:not(:first-child) {
-  display: none !important;
+.posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-content-raw * {
+  box-sizing: border-box !important;
 }
 .posts-grid .post-grid-item .post-grid-cover .post-grid-images .post-default-cover {
   width: 100% !important;
@@ -3299,9 +3352,11 @@ pre code {
 }
 .posts-grid .post-grid-item .post-grid-main {
   flex-grow: 1 !important;
+  flex-shrink: 1 !important;
   padding: 20px !important;
   display: flex !important;
   flex-direction: column !important;
+  min-width: 0 !important;
 }
 .posts-grid .post-grid-item .post-grid-main .post-grid-header {
   margin-bottom: 12px !important;
@@ -3314,6 +3369,7 @@ pre code {
 .posts-grid .post-grid-item .post-grid-main .post-grid-header .post-grid-title .post-title-link {
   color: var(--text-color) !important;
   transition: color 0.2s ease !important;
+  text-decoration: none !important;
 }
 .posts-grid .post-grid-item .post-grid-main .post-grid-header .post-grid-title .post-title-link:hover {
   color: var(--link-hover-color) !important;
@@ -3342,6 +3398,7 @@ pre code {
 .posts-grid .post-grid-item .post-grid-main .post-grid-header .post-grid-meta .post-grid-tags a {
   color: #666 !important;
   transition: color 0.2s ease !important;
+  text-decoration: none !important;
 }
 .posts-grid .post-grid-item .post-grid-main .post-grid-header .post-grid-meta time a:hover,
 .posts-grid .post-grid-item .post-grid-main .post-grid-header .post-grid-meta .post-grid-category a:hover,
@@ -3367,21 +3424,32 @@ pre code {
   display: inline-flex !important;
   align-items: center !important;
   gap: 4px !important;
-  color: var(--link-color) !important;
+  color: #1890ff !important;
   font-size: 0.9em !important;
   transition: all 0.2s ease !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
 }
 .posts-grid .post-grid-item .post-grid-main .post-grid-footer .post-grid-read-more:hover {
-  color: var(--link-hover-color) !important;
+  color: #40a9ff !important;
   gap: 8px !important;
+  transform: translateX(2px) !important;
 }
-@media (max-width: 767px) {
+.posts-grid .post-grid-item .post-grid-main .post-grid-footer .post-grid-read-more i {
+  transition: transform 0.2s ease !important;
+}
+.posts-grid .post-grid-item .post-grid-main .post-grid-footer .post-grid-read-more:hover i {
+  transform: translateX(2px) !important;
+}
+@media (max-width: 480px) {
   .posts-grid .post-grid-item {
     flex-direction: column !important;
   }
   .posts-grid .post-grid-item .post-grid-cover {
     width: 100% !important;
-    height: 200px !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: 180px !important;
   }
   .posts-grid .post-grid-item .post-grid-main {
     padding: 16px !important;
