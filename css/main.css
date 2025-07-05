@@ -1290,7 +1290,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffff14;
+  background: #6cebf1;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -3187,67 +3187,62 @@ pre code {
 .post-grid-item .post-grid-meta a:hover {
   color: #1890ff;
 }
-.post-grid-item .post-grid-image {
-  margin: 15px -20px;
-  overflow: hidden;
-  height: 200px;
-  position: relative;
+.post-grid-item .post-grid-content {
+  margin: 15px 0;
 }
-.post-grid-item .post-grid-image p,
-.post-grid-item .post-grid-image h1,
-.post-grid-item .post-grid-image h2,
-.post-grid-item .post-grid-image h3,
-.post-grid-item .post-grid-image h4,
-.post-grid-item .post-grid-image h5,
-.post-grid-item .post-grid-image h6 {
+.post-grid-item .post-grid-content .post-grid-images > * {
   display: none;
 }
-.post-grid-item .post-grid-image .image-gallery {
-  background: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  height: 100%;
+.post-grid-item .post-grid-content .post-grid-images .image-gallery:first-child {
+  display: block;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+.post-grid-item .post-grid-content .post-grid-images .image-gallery:first-child .gallery-row:first-child {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.post-grid-item .post-grid-content .post-grid-images .image-gallery:first-child .gallery-row:first-child .gallery-img:first-child {
+  display: block;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-.post-grid-item .post-grid-image .gallery-img:not(:first-child) {
-  display: none !important;
+.post-grid-item .post-grid-content .post-grid-images .image-gallery:first-child .gallery-row:first-child .gallery-img:first-child:hover {
+  transform: scale(1.02);
 }
-.post-grid-item .post-grid-image .gallery-row:not(:first-child) {
-  display: none !important;
+.post-grid-item .post-grid-content .post-grid-images .image-gallery:first-child .gallery-row:first-child .gallery-img:not(:first-child) {
+  display: none;
 }
-.post-grid-item .post-grid-image .gallery-img:first-child {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 0 !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  margin: 0 !important;
-  flex: none !important;
-  max-width: none !important;
-  transition: transform 0.3s ease !important;
+.post-grid-item .post-grid-content .post-grid-images .image-gallery:first-child .gallery-row:not(:first-child) {
+  display: none;
 }
-.post-grid-item .post-grid-image:hover .gallery-img:first-child {
-  transform: scale(1.05);
+.post-grid-item .post-grid-content .post-grid-images .image-gallery:not(:first-child) {
+  display: none;
 }
-.post-grid-item .post-grid-image::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1));
-  z-index: 1;
+.post-grid-item .post-grid-content .post-grid-images img:first-child {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.post-grid-item .post-grid-content .post-grid-images img:first-child:hover {
+  transform: scale(1.02);
+}
+.post-grid-item .post-grid-content .post-grid-images img:not(:first-child) {
+  display: none;
 }
 .post-grid-item .post-grid-excerpt {
   color: #333;
@@ -3270,8 +3265,9 @@ pre code {
   .posts-grid {
     grid-template-columns: 1fr;
   }
-  .post-grid-item .post-grid-image {
-    height: 160px;
+  .post-grid-item .post-grid-content .post-grid-images .image-gallery:first-child .gallery-row:first-child .gallery-img:first-child,
+  .post-grid-item .post-grid-content .post-grid-images img:first-child {
+    height: 150px;
   }
 }
 @-moz-keyframes fadeIn {
